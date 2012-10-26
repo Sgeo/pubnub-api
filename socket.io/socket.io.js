@@ -206,8 +206,11 @@
     // =====================================================================
     function locate(callback) {
         var callback = callback || function(){};
+        console.log("navigator: ", navigator);
+        console.log("navigator.geolocation: ", navigator.geolocation);
         navigator && navigator.geolocation &&
-        navigator.geolocation.getCurrentPosition(function(position) {  
+        navigator.geolocation.getCurrentPosition(function(position) { 
+            console.log("Retrieved a position of some sort...");
             p.location = [
                 position.coords.latitude,
                 position.coords.longitude
